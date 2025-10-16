@@ -22,4 +22,3 @@ thiserror = "1.0.48"
 
 [features]
 default = []
-idl-build = ["squads-multisig-program/idl-build"]

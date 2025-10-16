@@ -81,7 +81,7 @@ where
 }
 
 // IdlBuild implementation for Anchor 0.31.x compatibility
-#[cfg(feature = "idl-build")]
+// Always compiled because anchor-spl has idl-build enabled
 impl<L, T> anchor_lang::IdlBuild for SmallVec<L, T> {}
 
 // This is copy-pasted from borsh::de::hint;
