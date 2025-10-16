@@ -5,10 +5,10 @@ use squads_multisig_program::{
 use std::collections::HashMap;
 
 use super::compiled_keys::CompiledKeys;
-use crate::AddressLookupTableAccount;
 use crate::solana_program::instruction::{AccountMeta, Instruction};
 use crate::solana_program::message::{AccountKeys, CompileError};
 use crate::solana_program::pubkey::Pubkey;
+use crate::AddressLookupTableAccount;
 
 #[derive(thiserror::Error, Debug)]
 pub enum Error {

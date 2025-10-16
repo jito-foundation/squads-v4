@@ -80,6 +80,21 @@ where
     }
 }
 
+// IdlBuild implementation for Anchor 0.31.x compatibility
+#[cfg(feature = "idl-build")]
+impl<L, T> anchor_lang::IdlBuild for SmallVec<L, T>
+where
+    T: anchor_lang::IdlBuild,
+{
+    fn get_idl_type_def() -> Option<anchor_lang::idl::types::IdlTypeDef> {
+        None
+    }
+
+    fn get_idl_type() -> anchor_lang::idl::types::IdlType {
+        anchor_lang::idl::types::IdlType::Vec(Box::new(T::get_idl_type()))
+    }
+}
+
 // This is copy-pasted from borsh::de::hint;
 mod hint {
     #[inline]
