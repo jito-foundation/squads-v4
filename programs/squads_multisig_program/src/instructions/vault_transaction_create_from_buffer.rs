@@ -69,7 +69,11 @@ impl<'info> VaultTransactionCreateFromBuffer<'info> {
             .rent_payer
             .to_account_info();
 
-        let system_program = &ctx.accounts.vault_transaction_create.system_program.to_account_info();
+        let system_program = &ctx
+            .accounts
+            .vault_transaction_create
+            .system_program
+            .to_account_info();
 
         // Read-only accounts
         let transaction_buffer = &ctx.accounts.transaction_buffer;
